@@ -1,0 +1,69 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <h3>10.   Cash Flow Operating Adjustments  </h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="mb-3 row">
+                <label for="declaration" class="col-sm-4 col-form-label">Declaration:</label>
+                <div class="col-sm-7">
+                    <input type="number" id="declaration" name="declaration" [(ngModel)]="cashflow.declaration" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="netChangeInOperatingLeaseActivity" class="col-sm-4 col-form-label">Net Change in Operating Lease Activity:</label>
+                <div class="col-sm-7">
+                    <input type="number" id="netChangeInOperatingLeaseActivity" name="netChangeInOperatingLeaseActivity" [(ngModel)]="cashflow.netChangeInOperatingLeaseActivity" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="lossOnSaleOfProperty" class="col-sm-4 col-form-label">Loss on Sale of Property:</label>
+                <div class="col-sm-7">
+                    <input type="number" id="lossOnSaleOfProperty" name="lossOnSaleOfProperty" [(ngModel)]="cashflow.lossOnSaleOfProperty" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="amountsPayable" class="col-sm-4 col-form-label">Amounts Payable:</label>
+                <div class="col-sm-7">
+                    <input type="number" id="amountsPayable" name="currentYearCash" [(ngModel)]="cashflow.amountsPayable" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="accruedExpenses" class="col-sm-4 col-form-label">Accrued Expenses:</label>
+                <div class="col-sm-7">
+                    <input type="number" id="accruedExpenses" name="accruedExpenses" [(ngModel)]="cashflow.accruedExpenses" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="grantsAndContractsReceivable" class="col-sm-4 col-form-label">Grants and Contracts Receivable:</label>
+                <div class="col-sm-7">
+                    <input type="number" id="grantsAndContractsReceivable" name="grantsAndContractsReceivable" [(ngModel)]="cashflow.grantsAndContractsReceivable" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="prepaidExpenses" class="col-sm-4 col-form-label">Prepaid Expenses:</label>
+                <div class="col-sm-7">
+                    <input type="number" id="prepaidExpenses" name="prepaidExpenses" [(ngModel)]="cashflow.prepaidExpenses" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="totalAdjustments" class="col-sm-4 col-form-label">Total Adjustments:</label>
+                <div class="col-sm-7">
+                    <input type="number" id="totalAdjustments" name="totalAdjustments" [(ngModel)]="cashflow.totalAdjustments" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-sm-7 offset-sm-2">
+                    <button type="reset" class="btn btn-primary">Clear</button> |
+                    <a href="#/liquidity" target="_self">
+                        <button type="button" class="btn btn-primary">Back</button>
+                    </a>    |
+                    <a href="#/cashflow" target="_self">
+                        <button type="button" class="btn btn-primary"  (click)="onSubmit()">Next</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-OgwbZS7/BXzYznvVEVNkKPN7iYTzgfyD5zUxwretTDYuqpcgrvXvRO04hY3zLjOM" crossorigin="anonymous"></script>
+</div>

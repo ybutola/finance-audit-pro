@@ -1,0 +1,76 @@
+<div class="main-content">
+    <div class="container-fluid">
+            <h3>9.   Liquidity And Availability</h3>
+            <form (ngSubmit)="onSubmit()">
+                <div class="mb-3 row">
+                    <label for="currentYear" class="col-sm-4 col-form-label">Current Year:</label>
+                    <div class="col-sm-7">
+                        <input type="number" id="currentYear" name="currentYear" [(ngModel)]="liquidity.currentYear" pattern="[0-9]{4}" />
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="currentYearCash" class="col-sm-4 col-form-label">Cash:</label>
+                    <div class="col-sm-7">
+                        <input type="number" id="currentYearCash" name="currentYearCash" [(ngModel)]="liquidity.currentYearCash" />
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="currentYearGrantsAndContractsReceivable" class="col-sm-4 col-form-label">Grants And Contracts Receivable:</label>
+                    <div class="col-sm-7">
+                        <input type="number" id="currentYearGrantsAndContractsReceivable" name="currentYearGrantsAndContractsReceivable" [(ngModel)]="liquidity.currentYearGrantsAndContractsReceivable" />
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="currentYearTotalFinancialAssets" class="col-sm-4 col-form-label">Total Financial Assets:</label>
+                    <div class="col-sm-7">
+                        <input type="number" id="currentYearTotalFinancialAssets" name="currentYearTotalFinancialAssets" [(ngModel)]="liquidity.currentYearTotalFinancialAssets" />
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="totalAssetsWithDonorRestrictions" class="col-sm-4 col-form-label">Total Assets With Donor Restrictions:</label>
+                    <div class="col-sm-7">
+                        <input type="number" id="totalAssetsWithDonorRestrictions" name="totalAssetsWithDonorRestrictions" [(ngModel)]="liquidity.totalAssetsWithDonorRestrictions" />
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="netAssetsWithRestrictions" class="col-sm-4 col-form-label">Net Assets With Restrictions:</label>
+                    <div class="col-sm-7">
+                        <input type="number" id="netAssetsWithRestrictions" name="currentYearCash" [(ngModel)]="liquidity.netAssetsWithRestrictions" />
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="totalAssetsNotAvailable" class="col-sm-4 col-form-label">Total Assets Not Available:</label>
+                    <div class="col-sm-7">
+                        <input type="number" id="totalAssetsNotAvailable" name="totalAssetsNotAvailable" [(ngModel)]="liquidity.totalAssetsNotAvailable" />
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="financialAssetsAvailable" class="col-sm-4 col-form-label">Financial Assets Available:</label>
+                    <div class="col-sm-7">
+                        <input type="number" id="financialAssetsAvailable" name="financialAssetsAvailable" [(ngModel)]="liquidity.financialAssetsAvailable" />
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <div class="col-sm-7 offset-sm-2">
+                        <button type="reset" class="btn btn-primary">Clear</button> |
+                        <a href="#/org" target="_self">
+                            <button type="button" class="btn btn-primary">Back</button>
+                        </a> |
+                        <a href="#/cashflow" target="_self">
+                            <button type="button" class="btn btn-primary"  (click)="onSubmit()">Next</button>
+                        </a> |
+
+                        <button type="reset" class="btn btn-primary"  (click)="preview()">Preview</button>
+
+                    </div>
+                </div>
+            </form>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-OgwbZS7/BXzYznvVEVNkKPN7iYTzgfyD5zUxwretTDYuqpcgrvXvRO04hY3zLjOM" crossorigin="anonymous"></script>
+
+    </div>
+</div>

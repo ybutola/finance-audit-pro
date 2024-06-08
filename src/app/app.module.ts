@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { OrgComponent } from './org/org.component';
+import { LiquidityComponent } from './liquidity/liquidity.component';
+import { CashflowComponent } from './cashflow/cashflow.component';
 
 @NgModule({
   imports: [
@@ -21,6 +24,9 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    OrgComponent,
+    LiquidityComponent,
+    CashflowComponent,
 
   ],
   providers: [],
