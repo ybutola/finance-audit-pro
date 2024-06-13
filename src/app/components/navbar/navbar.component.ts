@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
+import { ReportService } from '../../services/report.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,13 +15,18 @@ export class NavbarComponent implements OnInit {
       mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
-
-    constructor(location: Location,  private element: ElementRef, private router: Router) {
+    companyName: string= "";
+    year: number= 2024;
+    version: number= 1;
+    constructor(location: Location,  private element: ElementRef, private router: Router, private reportService: ReportService) {
       this.location = location;
           this.sidebarVisible = false;
     }
 
     ngOnInit(){
+      this.reportService.getCompanyName.subscribe(companyName => this.companyName = companyName);
+      this.reportService.getVersion.subscribe(version => this.version = version);
+      this.reportService.getYear.subscribe(year => this.year = year);
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
@@ -109,6 +115,7 @@ export class NavbarComponent implements OnInit {
         }
     };
 
+
     getTitle(){
       var titlee = this.location.prepareExternalUrl(this.location.path());
       if(titlee.charAt(0) === '#'){
@@ -120,6 +127,7 @@ export class NavbarComponent implements OnInit {
               return this.listTitles[item].title;
           }
       }
+
       return 'Dashboard';
     }
 }

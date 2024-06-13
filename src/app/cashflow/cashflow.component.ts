@@ -55,4 +55,20 @@ export class CashflowComponent implements OnInit {
              }
            );
     }
+
+
+          generatePreview(): Observable<Blob> {
+           const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+           return this.http.get('http://localhost:8080/report/word/report/preview?companyName=butolaorg&version=1&year=2024', { headers, responseType: 'blob' });
+          }
+
+          preview(): void {
+            this.generatePreview().subscribe(response => {
+                 const blob = new Blob([response], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+                 const url = window.URL.createObjectURL(blob);
+                 window.open(url);
+              }, error =>{
+                  console.error('Error fetching data:', error)
+              });
+          }
 }

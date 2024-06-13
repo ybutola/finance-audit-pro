@@ -11,31 +11,37 @@ import { Org } from '../data/org';
 })
 export class OrgComponent implements OnInit {
       org: Org = new Org();
+      companyName: string = "";
+      isReadOnly: boolean = false;
       constructor(private http: HttpClient, private reportService: ReportService) {}
 
       ngOnInit(): void {
+        this.reportService.getCompanyName.subscribe(companyName => this.org.companyName = companyName);
+        if (this.org.companyName != "") {
+            this.isReadOnly = true;
+        }
       }
 
       url: string = 'http://localhost:8080/report/word/org/saveOrgInfo';
 
      onSubmit() {
+         if (!this.isReadOnly) {
+             const headers = new HttpHeaders({
+                 'Content-Type': 'application/json'
+             });
 
-         const headers = new HttpHeaders({
-             'Content-Type': 'application/json'
-         });
-
-         this.http.post(this.url, JSON.stringify(this.org), { headers }).subscribe(
-               (response) => {
-              // alert("Response: " +response);
-                 console.log('POST request successful:', response);
-               },
-               (error) => {
-               //  alert("Error: "+ error.data);
-                 console.error('Error making POST request:', error);
-               }
+             this.http.post(this.url, JSON.stringify(this.org), { headers }).subscribe(
+                   (response) => {
+                     console.log('POST request successful:', response);
+                   },
+                   (error) => {
+                   //  alert("Error: "+ error.data);
+                     console.error('Error making POST request:', error);
+                   }
              );
             this.reportService.setCompanyName(this.org.companyName);
             this.reportService.setVersion(this.org.version);
             this.reportService.setYear(this.org.assessmentYear);
-        }
+         }
+     }
 }

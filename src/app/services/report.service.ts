@@ -8,7 +8,7 @@ export class ReportService {
 
    constructor() {}
 
-   private companyName = new BehaviorSubject<string>('butola');
+   private companyName = new BehaviorSubject<string>('');
    getCompanyName = this.companyName.asObservable();
    setCompanyName(name: string) {
      this.companyName.next(name);
