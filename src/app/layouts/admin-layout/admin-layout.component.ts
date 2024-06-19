@@ -50,25 +50,27 @@ export class AdminLayoutComponent implements OnInit {
            elemSidebar.scrollTop = 0;
       });
       if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
+       alert("88888")
           let ps = new PerfectScrollbar(elemMainPanel);
           ps = new PerfectScrollbar(elemSidebar);
       }
 
       const window_width = $(window).width();
       let $sidebar = $('.sidebar');
+      let $highlight_label = $('.highlight-label'); // This is not working at the moment.
       let $sidebar_responsive = $('body > .navbar-collapse');
       let $sidebar_img_container = $sidebar.find('.sidebar-background');
 
 
       if(window_width > 767){
           if($('.fixed-plugin .dropdown').hasClass('show-dropdown')){
-              $('.fixed-plugin .dropdown').addClass('open');
+            $('.fixed-plugin .dropdown').addClass('open');
           }
 
       }
 
       $('.fixed-plugin a').click(function(event){
-        // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+
           if($(this).hasClass('switch-trigger')){
               if(event.stopPropagation){
                   event.stopPropagation();
@@ -90,6 +92,7 @@ export class AdminLayoutComponent implements OnInit {
 
           if($sidebar.length !== 0){
               $sidebar.attr('data-color', new_color);
+              $highlight_label.attr('color', new_color);
           }
 
           if($sidebar_responsive.length != 0){
@@ -108,6 +111,7 @@ export class AdminLayoutComponent implements OnInit {
 
           if($sidebar_img_container.length !=0 ){
               $sidebar_img_container.fadeOut('fast', function(){
+
                  $sidebar_img_container.css('background-image','url("' + new_image + '")');
                  $sidebar_img_container.fadeIn('fast');
               });
@@ -122,6 +126,7 @@ export class AdminLayoutComponent implements OnInit {
           }
 
           if($sidebar_responsive.length != 0){
+
               $sidebar_responsive.css('background-image','url("' + new_image + '")');
           }
       });
@@ -148,6 +153,7 @@ export class AdminLayoutComponent implements OnInit {
   }
   isMac(): boolean {
       let bool = false;
+
       if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {
           bool = true;
       }

@@ -11,6 +11,10 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { OrgComponent } from '../../org/org.component';
 import { LiquidityComponent } from '../../liquidity/liquidity.component';
 import { CashflowComponent } from '../../cashflow/cashflow.component';
+import { ReportsComponent } from '../../reports/reports.component';
+import { TemplateselectionComponent } from '../../templateselection/templateselection.component';
+import { FileuploadComponent } from '../../fileupload/fileupload.component';
+
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -66,5 +70,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'org',        component: OrgComponent },
     { path: 'liquidity',        component: LiquidityComponent },
     { path: 'cashflow',        component: CashflowComponent },
+    { path: 'reports',        component: ReportsComponent },
+    { path: 'templateselection',        component: TemplateselectionComponent },
+    { path: 'fileupload',        component: FileuploadComponent },
 
 ];

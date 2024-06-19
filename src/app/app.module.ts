@@ -10,6 +10,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { OrgComponent } from './org/org.component';
 import { LiquidityComponent } from './liquidity/liquidity.component';
 import { CashflowComponent } from './cashflow/cashflow.component';
+import { TemplatesComponent } from './templates/templates.component';
+import { ReportsComponent } from './reports/reports.component';
+import { TemplateselectionComponent } from './templateselection/templateselection.component';
+import { FileuploadComponent } from './fileupload/fileupload.component';
 
 @NgModule({
   imports: [
@@ -27,6 +31,10 @@ import { CashflowComponent } from './cashflow/cashflow.component';
     OrgComponent,
     LiquidityComponent,
     CashflowComponent,
+    TemplatesComponent,
+    ReportsComponent,
+    TemplateselectionComponent,
+    FileuploadComponent,
 
   ],
   providers: [],
