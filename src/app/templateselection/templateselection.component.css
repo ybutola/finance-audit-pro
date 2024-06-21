@@ -1,0 +1,11 @@
+.container {
+  max-width: 800px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.highlight-label {
+  color: #000000; /* Bootstrap primary color */
+ /* font-weight: bold;*/
+}
+

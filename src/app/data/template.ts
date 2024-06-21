@@ -1,5 +1,5 @@
 export class Template {
-    public name: string;
+    public companyName: string;
     public year: number;
     public version: number;
     public createdBy: string;

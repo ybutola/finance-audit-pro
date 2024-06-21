@@ -1,0 +1,35 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header highlight-label">
+                File Upload
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="companyName" class="form-label highlight-label">Company/Org Name</label>
+                        <input type="text" class="form-control" id="companyName" placeholder="Enter company or organization name" name="companyName" [(ngModel)]="companyName">
+                    </div>
+                    <div class="col">
+                        <label for="year" class="form-label highlight-label">Year</label>
+                        <input type="number" class="form-control" id="year" placeholder="Enter the year" name="year" [(ngModel)]="year">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="version" class="form-label highlight-label">Version</label>
+                        <input type="number" class="form-control" id="version" placeholder="Enter the version" name="version" [(ngModel)]="version">
+                    </div>
+                </div>
+                <input type="file" (change)="onFileChanged($event)" class="form-control" accept=".doc,.docx">
+                <br>
+                <button class="btn btn-primary" (click)="onUpload()" *ngIf="selectedFile">Upload</button>
+                <div class="progress" *ngIf="uploadProgress > 0">
+                    <div class="progress-bar" role="progressbar" [style.width]="uploadProgress + '%'"></div>
+                </div>
+                <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+                <div *ngIf="uploadMessage" class="alert alert-info mt-3">{{ uploadMessage }}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <hr>
+        <div class="container">
+            <form (ngSubmit)="onSubmit(searchForm)" #searchForm="ngForm">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="companyName" class="form-label highlight-label">Name</label>
+                        <input type="text" class="form-control" id="companyName"
+                            placeholder="Enter the name of the template" name="companyName" ngModel>
+                    </div>
+                    <div class="col">
+                        <label for="year" class="form-label highlight-label">Year</label>
+                        <input type="text" class="form-control" id="year" placeholder="Enter the year of the template"
+                            name="year" ngModel>
+                    </div>
+                    <div class="col">
+                        <label for="version" class="form-label highlight-label">Version</label>
+                        <input type="text" class="form-control" id="version" placeholder="Enter the version number"
+                            name="version" ngModel>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="createdBy" class="form-label highlight-label">Created By</label>
+                        <input type="text" class="form-control" id="createdBy" placeholder="Provide name of the person"
+                            name="createdBy" ngModel>
+                    </div>
+                    <div class="col">
+                        <label for="updatedBy" class="form-label highlight-label">Updated By</label>
+                        <input type="text" class="form-control" id="updatedBy" placeholder="Provide name of the person"
+                            name="updatedBy" ngModel>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="createdDate" class="form-label highlight-label">Created Date</label>
+                        <input type="date" class="form-control" id="createdDate" name="createdDate" ngModel>
+                    </div>
+                    <div class="col">
+                        <label for="updatedDate" class="form-label highlight-label">Updated Date</label>
+                        <input type="date" class="form-control" id="updatedDate" name="updatedDate" ngModel>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="col-md-12">
+            <div class="card card-plain">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title mt-0"> Select A Template</h4>
+                    <!--<p class="card-category"> Here is a subtitle for this table</p>-->
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="">
+                                <th>ID</th>
+                                <th>Select</th>
+                                <th>Name</th>
+                                <th>Year</th>
+                                <th>Version</th>
+                                <th>Created By</th>
+                                <th>Updated By</th>
+                                <th>Created On</th>
+                                <th>Updated On</th>
+                                <th>View</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let template of templates; let idx = index">
+                                    <td>{{idx+1}}</td>
+                                    <td>
+                                        <input type="radio" name="options" [value]="idx+1" [(ngModel)]="selectedOption"
+                                            (change)="onRadioChange(idx)" />
+                                    </td>
+                                    <td>{{template.companyName}}</td>
+                                    <td>{{template.year}}</td>
+                                    <td>{{template.version}}</td>
+                                    <td>{{template.createdBy}}</td>
+                                    <td>{{template.updatedBy}}</td>
+                                    <td>{{template.createdDate}}</td>
+                                    <td>{{template.updatedDate}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
