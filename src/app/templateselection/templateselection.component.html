@@ -55,7 +55,7 @@
         <div class="col-md-12">
             <div class="card card-plain">
                 <div class="card-header card-header-danger">
-                    <h4 class="card-title mt-0"> Select A Template</h4>
+                    <h4 class="card-title mt-0"> Select A Template </h4>
                     <!--<p class="card-category"> Here is a subtitle for this table</p>-->
                 </div>
                 <div class="card-body">
@@ -77,7 +77,7 @@
                                 <tr *ngFor="let template of templates; let idx = index">
                                     <td>{{idx+1}}</td>
                                     <td>
-                                        <input type="radio" name="options" [value]="idx+1" [(ngModel)]="selectedOption"
+                                        <input type="radio" name="options" [value]="idx" [(ngModel)]="selectedOption"
                                             (change)="onRadioChange(idx)" />
                                     </td>
                                     <td>{{template.companyName}}</td>
@@ -87,9 +87,15 @@
                                     <td>{{template.updatedBy}}</td>
                                     <td>{{template.createdDate}}</td>
                                     <td>{{template.updatedDate}}</td>
+                                    <td> <button type="reset" class="btn btn-primary"
+                                            (click)="preview(idx)">View</button> </td>
                                 </tr>
                             </tbody>
                         </table>
+                        <a href="#/org">
+                            <button type="reset" class="btn btn-primary" [disabled]="isButtonDisabled"
+                                (click)="continue()">Continue</button>
+                        </a>
                     </div>
                 </div>
             </div>
