@@ -1,6 +1,11 @@
 <div class="main-content">
     <div class="container-fluid">
-        <hr>
+        <div class="card card-plain">
+            <div class="card-header card-header-info">
+                <h4 class="card-title mt-0"> Search Template </h4>
+                <!--<p class="card-category"> Here is a subtitle for this table</p>-->
+            </div>
+        </div>
         <div class="container">
             <form (ngSubmit)="onSubmit(searchForm)" #searchForm="ngForm">
                 <div class="row mb-3">
@@ -54,7 +59,7 @@
 
         <div class="col-md-12">
             <div class="card card-plain">
-                <div class="card-header card-header-danger">
+                <div class="card-header card-header-info">
                     <h4 class="card-title mt-0"> Select A Template </h4>
                     <!--<p class="card-category"> Here is a subtitle for this table</p>-->
                 </div>
@@ -85,15 +90,15 @@
                                     <td>{{template.version}}</td>
                                     <td>{{template.createdBy}}</td>
                                     <td>{{template.updatedBy}}</td>
-                                    <td>{{template.createdDate}}</td>
-                                    <td>{{template.updatedDate}}</td>
+                                    <td>{{template.createdDate | date:'MM/dd/yyyy'}}</td>
+                                    <td>{{template.updatedDate | date:'MM/dd/yyyy'}}</td>
                                     <td> <button type="reset" class="btn btn-primary"
                                             (click)="preview(idx)">View</button> </td>
                                 </tr>
                             </tbody>
                         </table>
                         <a href="#/org">
-                            <button type="reset" class="btn btn-primary" [disabled]="isButtonDisabled"
+                            <button type="button" class="btn btn-primary" [disabled]="isButtonDisabled"
                                 (click)="continue()">Continue</button>
                         </a>
                     </div>

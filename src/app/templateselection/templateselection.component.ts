@@ -51,7 +51,7 @@ export class TemplateselectionComponent implements OnInit {
     var url = "http://localhost:8080/report/template/viewTemplate?companyName=" + this.template.companyName
       + "&version=" + this.template.version
       + "&year=" + this.template.year;
-    alert("URL: " + url);
+    //alert("URL: " + url);
     return this.http.get(url, { headers, responseType: 'blob' });
   }
 

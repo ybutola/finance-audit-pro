@@ -24,7 +24,7 @@ export class OrgComponent implements OnInit {
     }
 
     this.reportService.getTemplate.subscribe(template => this.template = template);
-    alert("this.companyName:" + this.template.companyName + " year: " + this.template.year + " version: " + this.template.version);
+    //alert("this.companyName:" + this.template.companyName + " year: " + this.template.year + " version: " + this.template.version);
   }
 
   url: string = 'http://localhost:8080/report/word/org/saveOrgInfo';
